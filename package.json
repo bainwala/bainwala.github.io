@@ -1,0 +1,22 @@
+{
+  "homepage": "http://bainwala.github.io/", 
+  "name": "bainwala.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bainwala/bainwala.github.io.git"
+  },
+  "author": "himanshu bainwala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bainwala/bainwala.github.io/issues"
+  }
+}
