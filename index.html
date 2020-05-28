@@ -322,7 +322,7 @@
       class="paralax-mf footer-paralax bg-image sect-mt4 route"
       style="background-image: url(img/2.jpg)"
     >
-      <div class="overlay-mf"></div>
+      <div class></div>
       <div class="container">
         <div class="row">
         </div>  
@@ -353,27 +353,73 @@
           </div>
         </div>
       </footer>
+      <h1 style="color:transparent">lhwdhclwh</h1>
+      <h1 style="color:transparent">lhwdhclwh</h1>
+    </div>
     </section>
     <!--/ Section Contact-footer End /-->
+    <div class="map">
+      I AIM TO TRAVEL AS MUCH AS I CAN !
+    </div>
+      <svg viewBox = "0 0 960 500" >
+      </svg>
+      <div style = "background-color: rgb(180, 180, 180); margin-top: 2%; height: 20px">
+        
+      </div>
 
+        
+    
+    <!--//-->
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <div id="preloader"></div>
 
     <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/popper/popper.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/counterup/jquery.waypoints.min.js"></script>
     <script src="lib/counterup/jquery.counterup.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/typed/typed.min.js"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+    <script src="https://www.unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+    <script>
+      const projection = d3.geoMercator();
+      const pathGenerator = d3.geoPath().projection(projection);
 
+      const svg = d3.select('svg')
+       
+
+      d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+      .then(data => {
+        const countries = topojson.feature(data, data.objects.countries);
+
+        countries.features.forEach(d => {
+          console.log(d.properties.name);
+        })
+        const paths = svg.selectAll('path').data(countries.features);
+
+        paths.enter().append('path')
+          .attr('class', 'country')
+          .attr('d', pathGenerator)
+          .attr('fill', d => {
+            if(d.properties.name === "India" || d.properties.name === "Nepal"
+            || d.properties.name === "Singapore" || d.properties.name === "United States of America"){
+              return 'maroon';
+            }
+            else {
+              return 'black';
+            }
+          })
+          .append('title')
+          .text(d => d.properties.name);
+          ;
+      })
+    </script>
     <!-- Template Main Javascript File -->
     <script src="js/main.js"></script>
   </body>
 </html>
+
+

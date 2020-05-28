@@ -1320,12 +1320,28 @@ footer .credits a {
 .Resume {
   border: none;
   background: none;
-  padding: 2% 50%;
+  margin-top: 1%;
+  margin-left: 38%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .doc {
-  padding: 10% 55%;
+  margin-top: 20%;
+  margin-left: 50%;
   font-Size : 45px;
   cursor: pointer; 
 }
+
+path {
+  stroke: white;
+  stroke-opacity: 0.5;
+}
+
+.map{
+  padding-top: 10%;
+  padding-bottom: 10%;
+  font-size: 40px;
+  text-align: center;
+  font-family: fantasy
+}
+
